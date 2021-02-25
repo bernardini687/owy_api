@@ -1,5 +1,5 @@
 const getHealthRoute = require('./routes/health')
 
-module.exports =  {
+module.exports = {
   'GET /health': getHealthRoute
 }
