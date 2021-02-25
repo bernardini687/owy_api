@@ -1,9 +1,9 @@
-const app = require('../app')
 const supertest = require('supertest')
+const app = require('../app')
 
 const request = supertest(app)
 
-it('gets the test endpoint', async done => {
+it('performs an health check', async done => {
   const response = await request.get('/health')
 
   expect(response.status).toBe(200)

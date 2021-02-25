@@ -1,5 +1,5 @@
-async function notFound (_req, res) {
+async function notFoundRoute (_req, res) {
   res.sendStatus(404)
 }
 
-module.exports = notFound
+module.exports = notFoundRoute
