@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "pre-commit:msg": "echo 'Pre-commit checks...'",
-    "standard": "standard",
+    "lint": "standard",
     "fix": "standard || (echo 'standard: Running to fix...' && standard --fix)",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -19,7 +19,7 @@
   },
   "pre-commit": [
     "pre-commit:msg",
-    "standard",
+    "lint",
     "test"
   ],
   "standard": {
