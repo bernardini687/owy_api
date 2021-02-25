@@ -1,4 +1,4 @@
-[![CI](https://github.com/bernardini687/owy_api/actions/workflows/main.yml/badge.svg)](https://github.com/bernardini687/owy_api/actions/workflows/main.yml)
+![](https://github.com/bernardini687/owy_api/workflows/CI/badge.svg)
 
 # OpenWeatherYelp API
 
