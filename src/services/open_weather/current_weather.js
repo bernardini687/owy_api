@@ -1,10 +1,18 @@
 const axios = require('axios')
+const shapeAxiosRequestError = require('../common/shapeAxiosRequestError')
 
-async function currentWeather (id) {
+/**
+ * Perform request for current weather data of the city by the given id.
+ *
+ * @param {string} id The city's id.
+ * @returns {Object} The reponse's payload.
+ * @throws Will throw an error when the response is unsuccessful.
+ */
+module.exports = async function currentWeather (id) {
   const url = `${process.env.OPEN_WEATHER_BASE_URL}/data/2.5/weather`
 
   try {
-    const response = await axios.get(url, {
+    const { data } = await axios.get(url, {
       params: {
         id,
         appid: process.env.OPEN_WEATHER_APP_ID,
@@ -12,11 +20,8 @@ async function currentWeather (id) {
       }
     })
 
-    return response.data
+    return data
   } catch (error) {
-    // TODO: error handling wrapper (axiosError, !200)
-    console.error(error)
+    shapeAxiosRequestError(error)
   }
 }
-
-module.exports = currentWeather
