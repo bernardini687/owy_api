@@ -28,5 +28,10 @@
     "env": [
       "jest"
     ]
+  },
+  "jest": {
+    "setupFiles": [
+      "dotenv/config"
+    ]
   }
 }
