@@ -1,4 +1,4 @@
-module.exports = class AxiosError extends Error {
+module.exports = class ErrorWithResponse extends Error {
   constructor (response) {
     super()
 
