@@ -1,8 +1,8 @@
 module.exports = {
-  status: 401,
-  statusText: 'Unauthorized',
+  status: 404,
+  statusText: 'Not Found',
   data: {
-    cod: 401,
-    message: 'Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.'
+    cod: '404',
+    message: 'city not found'
   }
 }
