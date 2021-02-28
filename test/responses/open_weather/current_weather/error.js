@@ -1,8 +1,8 @@
 module.exports = {
-  status: 401,
-  statusText: 'Unauthorized',
+  status: 429,
+  statusText: 'Too Many Requests',
   data: {
-    cod: 401,
-    message: 'Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.'
+    cod: '429',
+    message: 'calls limit exceeded'
   }
 }
