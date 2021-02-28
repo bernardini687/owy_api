@@ -28,7 +28,9 @@ npm run test:watch # keep test running and auditing for file changes
 - [jest](https://jestjs.io/docs/en/getting-started.html)
 - [standard](https://standardjs.com/)
 - [supertest](https://github.com/visionmedia/supertest)
+- [yelp-fusion](https://github.com/tonybadguy/yelp-fusion#yelp-fusion)
 
 ### api docs
 
 - [openweather](https://openweathermap.org/api)
+- [yelp](https://www.yelp.com/developers/documentation/v3)

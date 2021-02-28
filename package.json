@@ -6,7 +6,7 @@
     "fix": "standard || (echo 'standard: Running to fix...' && standard --fix)",
     "test": "jest",
     "test:watch": "jest --watch",
-    "start": "node src/main.js"
+    "start": "node lib"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
