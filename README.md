@@ -24,15 +24,95 @@ npm run test:watch # keep test running and auditing for file changes
 ### api doc
 
 ```sh
-curl 'http://localhost:3000/health'             # health check endpoint
-curl 'http://localhost:3000/cities?ids=3180813' # one city dataset (businesses + weather, see `dataset schema`)
+curl 'http://localhost:3000/health'                         # health check endpoint
+# curl 'http://loclahost:3000/ids'                          # list of city ids mapped to the respective name (TODO)
+curl 'http://localhost:3000/cities?ids=3180813'             # one city dataset (businesses + weather info)
+curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city datasets (max 5)
 ```
 
-### dataset schema
+### city dataset schema
 
 ```json
 {
-
+  "businesses": [
+    {
+      "id": "QKkVeP0eSJvpPqoKLY-d2A",
+      "alias": "la-trattoria-da-gino-e-gabi-cannero-riviera",
+      "name": "La Trattoria da Gino & Gabi",
+      "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/MNVTcCD5zQKBeq89Ru4FYQ/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/la-trattoria-da-gino-e-gabi-cannero-riviera?adjust_creative=1NqWEY6v4eRFIifCnjnNzA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=1NqWEY6v4eRFIifCnjnNzA",
+      "review_count": 3,
+      "categories": [
+        {
+          "alias": "italian",
+          "title": "Italian"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 46.0222702,
+        "longitude": 8.6819801
+      },
+      "transactions": [],
+      "location": {
+        "address1": "Via Dante 12",
+        "address2": "",
+        "address3": "",
+        "city": "Cannero Riviera",
+        "zip_code": "28821",
+        "country": "IT",
+        "state": "VB",
+        "display_address": [
+          "Via Dante 12",
+          "28821 Cannero Riviera",
+          "Italy"
+        ]
+      },
+      "phone": "+390323788160",
+      "display_phone": "+39 0323 788160",
+      "distance": 209.82254578223575
+    },
+    "..."
+  ],
+  "total": 11,
+  "id": 3180813,
+  "name": "Cannero Riviera",
+  "currentWeather": {
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01d"
+      }
+    ],
+    "main": {
+      "temp": 12.61,
+      "feels_like": 7.7,
+      "temp_min": 10.56,
+      "temp_max": 14,
+      "pressure": 1029,
+      "humidity": 41
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 4.12,
+      "deg": 200
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1614528790,
+    "sys": {
+      "type": 1,
+      "id": 6936,
+      "country": "IT",
+      "sunrise": 1614492370,
+      "sunset": 1614532188
+    },
+    "timezone": 3600
+  }
 }
 ```
 
