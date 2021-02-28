@@ -21,6 +21,21 @@ npm run test
 npm run test:watch # keep test running and auditing for file changes
 ```
 
+### api doc
+
+```sh
+curl 'http://localhost:3000/health'             # health check endpoint
+curl 'http://localhost:3000/cities?ids=3180813' # one city dataset (businesses + weather, see `dataset schema`)
+```
+
+### dataset schema
+
+```json
+{
+
+}
+```
+
 ### packages docs
 
 - [axios](https://github.com/axios/axios#example)
@@ -31,7 +46,7 @@ npm run test:watch # keep test running and auditing for file changes
 - [supertest](https://github.com/visionmedia/supertest)
 - [yelp-fusion](https://github.com/tonybadguy/yelp-fusion#yelp-fusion)
 
-### api docs
+### third party api docs
 
 - [openweather](https://openweathermap.org/api)
 - [yelp](https://www.yelp.com/developers/documentation/v3)
