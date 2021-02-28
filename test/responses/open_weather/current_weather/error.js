@@ -1,8 +1,8 @@
 module.exports = {
-  status: 404,
-  statusText: 'Not Found',
+  status: 429,
+  statusText: 'Too Many Requests',
   data: {
-    cod: '404',
-    message: 'city not found'
+    cod: '429',
+    message: 'calls limit exceeded'
   }
 }

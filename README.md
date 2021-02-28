@@ -24,6 +24,7 @@ npm run test:watch # keep test running and auditing for file changes
 ### packages docs
 
 - [axios](https://github.com/axios/axios#example)
+- [bluebird](http://bluebirdjs.com/docs/getting-started.html)
 - [express](https://expressjs.com/en/4x/api.html)
 - [jest](https://jestjs.io/docs/en/getting-started.html)
 - [standard](https://standardjs.com/)
