@@ -27,7 +27,7 @@ npm run test:watch # keep test running and auditing for file changes
 
 ```sh
 curl 'http://localhost:3000/health'                         # health check endpoint
-curl 'http://localhost:3000/ids'                            # a list of city names mapped to their respective id
+curl 'http://localhost:3000/city_list'                      # a list of city names mapped to their respective id
 curl 'http://localhost:3000/cities?ids=3180813'             # one city dataset (businesses + weather info)
 curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city datasets (max 5)
 ```
@@ -36,7 +36,7 @@ curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city d
 
 ```sh
 # filter by city names: q = STRING
-curl 'http://localhost:3000/ids&q=roma'
+curl 'http://localhost:3000/city_list?q=roma'
 
 # pass a term to Yelp:              term    = STRING
 # set limit on returned businesses: limit   = NUMBER                                        (default: 20, max: 50)
@@ -132,7 +132,7 @@ curl 'http://localhost:3000/cities?ids=3180813&ids=3174411&term=pizza&limit=3&so
 </details>
 
 <details>
-<summary>id</summary>
+<summary>city id</summary>
 
 ```json
 {
