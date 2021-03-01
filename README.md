@@ -36,7 +36,7 @@ curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city d
 
 ```sh
 # filter by city names: q = STRING
-curl 'http://localhost:3000/city_list&q=roma'
+curl 'http://localhost:3000/city_list?q=roma'
 
 # pass a term to Yelp:              term    = STRING
 # set limit on returned businesses: limit   = NUMBER                                        (default: 20, max: 50)
