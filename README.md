@@ -41,7 +41,7 @@ curl 'http://localhost:3000/ids&q=roma'
 # pass a term to Yelp:              term    = STRING
 # set limit on returned businesses: limit   = NUMBER                                        (default: 20, max: 50)
 # sort returned businesses:         sort_by = best_match | rating | review_count | distance (default: best_match )
-curl 'http://localhost:3000/cities?ids=3180813&ids=3174411&term=pizza&limit=3&sort_by=rating'
+curl 'http://localhost:3000/cities?ids=3180813&ids=3174411&term=pizza&limit=3&sort_by=distance'
 ```
 
 ## response schemas
