@@ -2,18 +2,18 @@
 
 # OpenWeatherYelp API
 
-### environment variables
+## environment variables
 
 refer to [.env.example](.env.example)
 
-### setup
+## setup
 
 ```sh
 npm install
 npm run start
 ```
 
-### other scripts
+## other scripts
 
 ```sh
 npm run fix        # run `standard` to check for problems and fix them if found
@@ -21,16 +21,33 @@ npm run test
 npm run test:watch # keep test running and auditing for file changes
 ```
 
-### api doc
+## api doc
+
+### basic usage
 
 ```sh
 curl 'http://localhost:3000/health'                         # health check endpoint
-# curl 'http://loclahost:3000/ids'                          # list of city ids mapped to the respective name (TODO)
+curl 'http://localhost:3000/ids'                            # a list of city names mapped to their respective id
 curl 'http://localhost:3000/cities?ids=3180813'             # one city dataset (businesses + weather info)
 curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city datasets (max 5)
 ```
 
-### city dataset schema
+### available options
+
+```sh
+# filter by city names: q = STRING
+curl 'http://localhost:3000/ids&q=roma'
+
+# pass a term to Yelp:              term    = STRING
+# set limit on returned businesses: limit   = NUMBER                                        (default: 20, max: 50)
+# sort returned businesses:         sort_by = best_match | rating | review_count | distance (default: best_match )
+curl 'http://localhost:3000/cities?ids=3180813&ids=3174411&term=pizza&limit=3&sort_by=rating'
+```
+
+## response schemas
+
+<details>
+<summary>city dataset</summary>
 
 ```json
 {
@@ -63,11 +80,7 @@ curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city d
         "zip_code": "28821",
         "country": "IT",
         "state": "VB",
-        "display_address": [
-          "Via Dante 12",
-          "28821 Cannero Riviera",
-          "Italy"
-        ]
+        "display_address": ["Via Dante 12", "28821 Cannero Riviera", "Italy"]
       },
       "phone": "+390323788160",
       "display_phone": "+39 0323 788160",
@@ -116,17 +129,32 @@ curl 'http://localhost:3000/cities?ids=3180813&ids=3174411' # an array of city d
 }
 ```
 
-### packages docs
+</details>
+
+<details>
+<summary>id</summary>
+
+```json
+{
+  "Cannobio": 3180802
+}
+```
+
+</details>
+
+## packages docs
 
 - [axios](https://github.com/axios/axios#example)
 - [bluebird](http://bluebirdjs.com/docs/getting-started.html)
+- [event-stream](https://github.com/dominictarr/event-stream)
 - [express](https://expressjs.com/en/4x/api.html)
 - [jest](https://jestjs.io/docs/en/getting-started.html)
+- [JSONStream](https://github.com/dominictarr/JSONStream)
 - [standard](https://standardjs.com/)
 - [supertest](https://github.com/visionmedia/supertest)
 - [yelp-fusion](https://github.com/tonybadguy/yelp-fusion#yelp-fusion)
 
-### third party api docs
+## third party api docs
 
 - [openweather](https://openweathermap.org/api)
 - [yelp](https://www.yelp.com/developers/documentation/v3)
